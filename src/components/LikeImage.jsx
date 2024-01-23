@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react';
+import CommonProps from './Render Props/CommonProps';
 
-export default function LikeImage() {
+export default function LikeImage(){
+  return(
+    <CommonProps>
+      {/* {This is a children} */}
+      {
 
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
+        (
+          
+          {like, handleLike}
+        )=>(
+          <button onClick={handleLike}>Like <Image>like</Image></button>
+        )
 
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
-
-  return (
-    <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
-    </div>
+      }
+    </CommonProps>
   )
 }
